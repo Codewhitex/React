@@ -1,8 +1,6 @@
 # React
 
-npm install -g create-react-app@1.5.2 (global)
+npx create-react-app confusion (app name)
 
-create-react-app confusion 
-
-npm run (in confusion folder)
+npm start (in confusion folder)
 
