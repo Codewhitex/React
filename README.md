@@ -11,3 +11,6 @@ npm install --save reactstrap react react-dom
 
 npm i react-popper @popperjs/core
 
+npm install font-awesome@4.7.0
+
+npm install bootstrap-social@5.1.1
