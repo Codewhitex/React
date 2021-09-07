@@ -1,4 +1,3 @@
-import React, { Component } from "react";
 import {
   Card,
   CardImg,
@@ -9,9 +8,10 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 
-import { Navbar, NavbarBrand } from "reactstrap";
-import DishDetail from "./DishdetailComponent";
-import { DISHES } from "../shared/dishes";
+// import React, { Component } from "react";
+// import { Navbar, NavbarBrand } from "reactstrap";
+// import DishDetail from "./DishdetailComponent";
+// import { DISHES } from "../shared/dishes";
 
 function RenderMenuItem({ dish, onClick }) {
   return (
