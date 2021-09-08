@@ -20,3 +20,5 @@ npm install react-router-dom@4.2.2
 npm install redux
 
 npm install react-redux
+
+npm install react-redux-form@latest --save
