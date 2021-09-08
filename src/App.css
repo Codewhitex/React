@@ -34,3 +34,11 @@ address {
   width: 100% !important;
   padding: 20px 0px 20px 0px;
 }
+
+ul,
+li {
+  list-style-type: none;
+  list-style-position: inside;
+  margin: 0;
+  padding: 0;
+}
