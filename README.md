@@ -15,11 +15,7 @@ npm install font-awesome@4.7.0
 
 npm install bootstrap-social@5.1.1
 
-npm install redux
-
 npm install react react-dom redux react-redux redux-thunk --save
 
 npm install react-redux-form@latest --save
 
-//^if problem then
-npm install --legacy-peer-deps
