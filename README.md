@@ -20,3 +20,5 @@ npm install react react-dom redux react-redux redux-thunk --save
 npm install react-redux-form@latest --save
 
 npm install --save redux-logger
+
+npm install json-server -g
