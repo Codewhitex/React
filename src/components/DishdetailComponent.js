@@ -21,6 +21,7 @@ import { Loading } from "./LoadingComponent";
 import { baseUrl } from "../shared/baseUrl";
 
 
+
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !val || val.length <= len;
 const minLength = (len) => (val) => val && val.length >= len;
@@ -56,11 +57,8 @@ class CommentForm extends Component {
 
   handleSubmit(values) {
     this.toggleModal();
-    this.props.addComment(
-      this.props.dishId,
-      values.rating,
-      values.author,
-      values.comment
+    this.props.postComment(this.props.dishId, values.rating, values.author, values.comment);
+
     );
   }
 
@@ -143,7 +141,7 @@ class CommentForm extends Component {
                 <Col md={{ size: 12 }}>
                   <Button
                     outline
-                    onSubmit={this.props.addComment}
+                    onSubmit={this.props.postComment}
                     type="submit"
                     color="primary"
                   >
@@ -159,33 +157,33 @@ class CommentForm extends Component {
   }
 }
 
-function RenderComments({ comments, addComment, dishId }) {
-  if (comments != null)
-    return (
-      <div>
-        <h4>Comments</h4>
-        <ul class="list-unstyled">
-          {comments.map((comment) => {
-            return (
-              <li class="list-item-unstyled" key={comment.id}>
-                <p>{comment.comment}</p>
-                <p>
-                  --{comment.author} ,
-                  {new Intl.DateTimeFormat("en-US", {
-                    year: "numeric",
-                    month: "short",
-                    day: "2-digit",
-                  }).format(new Date(Date.parse(comment.date)))}
-                </p>
-              </li>
-            );
-          })}
-        </ul>
-        <CommentForm dishId={dishId} addComment={addComment} />
-      </div>
-    );
-  else return <div></div>;
-}
+    function RenderComments({ comments, postComment, dishId }) {
+      if (comments != null)
+        return (
+          <div>
+            <h4>Comments</h4>
+            <ul class="list-unstyled">
+              {comments.map((comment) => {
+                return (
+                  <li class="list-item-unstyled" key={comment.id}>
+                    <p>{comment.comment}</p>
+                    <p>
+                      --{comment.author} ,
+                      {new Intl.DateTimeFormat("en-US", {
+                        year: "numeric",
+                        month: "short",
+                        day: "2-digit",
+                      }).format(new Date(Date.parse(comment.date)))}
+                    </p>
+                  </li>
+                );
+              })}
+            </ul>
+            <CommentForm dishId={dishId} postComment={postComment} />
+          </div>
+        );
+      else return <div></div>;
+    }
 
 const DishDetail = (props) => {
   if (props.isLoading) {
@@ -226,7 +224,7 @@ const DishDetail = (props) => {
           <div className="col-12 col-md-5 m-1">
             <RenderComments
               comments={props.comments}
-              addComment={props.addComment}
+             postComment={props.postComment}
               dishId={props.dish.id}
             />
           </div>
