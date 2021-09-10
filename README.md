@@ -28,3 +28,5 @@ npm install cross-fetch@2.1.0
 npm install react-transition-group@2.3.0
 
 npm install react-animation-components
+
+npm install --save prop-types
