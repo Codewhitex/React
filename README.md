@@ -26,3 +26,5 @@ npm install json-server -g >>>      json-server --watch db.json -p 3001 -d 2000
 npm install cross-fetch@2.1.0
 
 npm install react-transition-group@2.3.0
+
+npm install react-animation-components
