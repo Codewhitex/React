@@ -30,3 +30,5 @@ npm install react-transition-group@2.3.0
 npm install react-animation-components
 
 npm install --save prop-types
+
+final = npm run build
